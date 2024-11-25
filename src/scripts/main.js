@@ -26,15 +26,14 @@ function createTree(element, data) {
 
     li.textContent = item;
 
-    if (Object.values(data[item]).length > 0) {
-      element.append(li);
+    element.append(li);
 
+    if (Object.values(data[item]).length > 0) {
       const ul = document.createElement('ul');
 
       li.append(ul);
       createTree(ul, data[item]);
     }
-    element.append(li);
   }
 }
 
